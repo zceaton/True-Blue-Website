@@ -1,0 +1,70 @@
+﻿; Domain: trueblueub.com
+; Exported (y-m-d hh:mm:ss): 2017-04-26 11:00:30
+;
+; This file is intended for use for informational and archival
+; purposes ONLY and MUST be edited before use on a production
+; DNS server.
+;
+; In particular, you must update the SOA record with the correct
+; authoritative name server and contact e-mail address information,
+; and add the correct NS records for the name servers which will
+; be authoritative for this domain.
+;
+; For further information, please consult the BIND documentation
+; located on the following website:
+;
+; http://www.isc.org/
+;
+; And RFC 1035:
+;
+; http://www.ietf.org/rfc/rfc1035.txt
+;
+; Please note that we do NOT offer technical support for any use
+; of this zone data, the BIND name server, or any other third-
+; party DNS software.
+;
+; Use at your own risk.
+
+; SOA Record
+trueblueub.com.	3600	IN	SOA	ns63.domaincontrol.com.	dns.jomax.net (
+				2017042502
+				28800
+				7200
+				604800
+				600
+				)
+
+; A Records
+@	600	IN	A	107.180.48.125
+admin	600	IN	A	107.180.48.125
+mail	600	IN	A	107.180.48.125
+
+; CNAME Records
+www	3600	IN	CNAME	@
+cpanel	3600	IN	CNAME	@
+webdisk	3600	IN	CNAME	@
+whm	3600	IN	CNAME	@
+www.admin	3600	IN	CNAME	@
+webdisk.admin	3600	IN	CNAME	@
+autodiscover	600	IN	CNAME	@
+autodiscover.admin	600	IN	CNAME	@
+webmail	3600	IN	CNAME	@
+autoconfig	3600	IN	CNAME	@
+autoconfig.admin	3600	IN	CNAME	@
+_domainconnect	3600	IN	CNAME	_domainconnect.gd.domaincontrol.com
+ftp	3600	IN	CNAME	@
+
+; MX Records
+@	3600	IN	MX	0	mail.trueblueub.com
+
+; TXT Records
+@	3600	IN	TXT	"v=spf1 a mx ptr include:secureserver.net ~all"
+admin	3600	IN	TXT	"v=spf1 a mx ptr include:secureserver.net ~all"
+
+; SRV Records
+_autodiscover._tcp.@	3600	IN	SRV	0	0	443	cpanelemaildiscovery.cpanel.net
+_autodiscover._tcp.admin	3600	IN	SRV	0	0	443	cpanelemaildiscovery.cpanel.net
+
+; NS Records
+@	3600	IN	NS	ns63.domaincontrol.com
+@	3600	IN	NS	ns64.domaincontrol.com
